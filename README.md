@@ -1,3 +1,9 @@
+<div style="display: inline-block; overflow: hidden;">
+
+![🚧 Em Construção](https://img.shields.io/badge/Status-🚧%20Em%20Construção-FF8C00?style=for-the-badge&logo=git&logoColor=white&color=blueviolet&labelColor=FF4500)
+
+</div>
+
 <div align="center">
 
   <h1>🚚 Sistema de Gestão de Frotas</h1>
