@@ -1,0 +1,42 @@
+{
+  "name": "erp_vehiclemainteance",
+  "version": "1.0.0",
+  "description": "<div style=\"display: inline-block; overflow: hidden;\">",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx watch src/main.ts",
+    "start:dev": "node build/server.js",
+    "build": "tsup src --out-dir build",
+    "test": "vitest run",
+    "test:watch": "vitest "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaomalfatti/ERP_vehicleMainteance.git"
+  },
+  "keywords": [],
+  "author": "João Malfatti",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.1",
+    "prisma": "^6.6.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "bcrypt": "^5.1.1",
+    "express": "^5.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/joaomalfatti/ERP_vehicleMainteance/issues"
+  },
+  "homepage": "https://github.com/joaomalfatti/ERP_vehicleMainteance#readme"
+}

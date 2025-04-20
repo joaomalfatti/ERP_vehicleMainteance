@@ -40,6 +40,10 @@ A estrutura foi pensada para permitir **rastreamento de histórico**, **controle
 ```md
 🔧 Cadastro e atualização:
 - [ ] Veículos
+  - [ ] Criar veículos
+  - [ ] Listar veículos
+  - [ ] Alterar veículos
+  - [ ] Excluir veículos
 - [ ] Motoristas
 - [ ] Oficinas
 
