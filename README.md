@@ -51,5 +51,5 @@ A estrutura foi pensada para permitir **rastreamento de histórico**, **controle
    ```
 --- 
 ## 🎲 EERD Diagrama (Modelo Entidade-Relacionamento Aprimorado)
-![alt text](image.png)
+![EERD Diagrama](eerd.png)
 
