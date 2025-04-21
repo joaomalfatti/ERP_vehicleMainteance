@@ -28,7 +28,8 @@ beforeEach(() => {
     findById: vi.fn().mockResolvedValue(mockVehicle),
     update: vi.fn().mockResolvedValue(undefined),
     save: vi.fn(),
-    list: vi.fn()
+    list: vi.fn(),
+    delete: vi.fn(),
   };
 
   updateVehicleUseCase = UpdateVehicleUseCase.create(vehicleGatewayMock);
