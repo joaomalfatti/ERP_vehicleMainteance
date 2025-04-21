@@ -1,4 +1,6 @@
-import type { VehicleEntityClass, VehicleStatus, VehicleType } from "@domain/vehicle/entity/vehicleEntity";
+import type { VehicleEntityClass} from "@domain/vehicle/entity/vehicleEntity";
+import type { VehicleStatusEnums } from "@domain/vehicle/enums/VehicleStatus";
+import type { VehicleTypeEnums } from "@domain/vehicle/enums/VehicleType";
 import type { VehicleGateway } from "@domain/vehicle/gateway/vehicleGateway";
 import type { UseCase } from "@usecases/UseCase";
 
@@ -11,9 +13,9 @@ export type ListVehicleOutputDto = {
             mark: string;
             model: string;
             year: string;
-            type: VehicleType;
+            type: VehicleTypeEnums;
             chassis: string;
-            status: VehicleStatus;
+            status: VehicleStatusEnums;
             dateAcquisition: Date;
             updateAt: Date,
     }[];
@@ -35,23 +37,19 @@ export class ListVehicleUseCase implements UseCase<ListVehicleInputDto, ListVehi
         return output;
     }
 
-    private presentOuput(vehicle: VehicleEntityClass[]): ListVehicleOutputDto {
+    private presentOuput(vehicles: VehicleEntityClass[]): ListVehicleOutputDto {
         return {
-            vehicle: vehicle.map((p) => {
-                return {
-                    id: p.id,
-                    plate: p.plate,
-                    mark: p.mark,
-                    model: p.model,
-                    year: p.year,
-                    type: p.type,
-                    chassis: p.chassis,
-                    status: p.status,
-                    dateAcquisition : p.dateAcquisition,
-                    updateAt: p.updateAt,
-                };
-            }),
-        };
-    }
-    
+          vehicle: vehicles.map(vehicle => ({
+            plate: vehicle.plate,
+            mark: vehicle.mark,
+            model: vehicle.model,
+            year: vehicle.year,
+            type: vehicle.type,
+            chassis: vehicle.chassis,
+            status: vehicle.status,
+            dateAcquisition: vehicle.dateAcquisition,
+            updateAt: vehicle.updateAt,
+          }))
+        }
+      }
 }

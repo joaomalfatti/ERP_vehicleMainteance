@@ -1,96 +1,119 @@
+import type { VehicleStatusEnums } from "../enums/VehicleStatus"
+import type { VehicleTypeEnums } from "../enums/VehicleType"
+import { ChassisValidate } from "../value-objects/chassisValue"
+import {  DateAcquisitionValidate } from "../value-objects/dateAcquisitionValue"
+import { PlateValidate } from "../value-objects/plateValue"
+import { YearValidate } from "../value-objects/yearValue"
+
 export type vehicleEntityProps = {
-    id_vehicle: string;
-    plate: string;
-    mark: string;
-    model: string;
-    year: string;
-    type: VehicleType;
-    chassis: string;
-    status: VehicleStatus;
-    dateAcquisition: Date;
-    updateAt: Date;
+  id_vehicle: string
+  plate: PlateValidate
+  mark: string
+  model: string
+  year: YearValidate
+  type: VehicleTypeEnums 
+  chassis: ChassisValidate
+  status: VehicleStatusEnums
+  dateAcquisition: DateAcquisitionValidate
+  updateAt: Date
 }
 
-export enum VehicleType {
-    cart = "Carreta",
-    Toco = "Caminhão Toco",
-    Truck = "Caminhão Truck"
-}
 
-export enum VehicleStatus {
-    Active = "Ativo",
-    Inactive = "Inativo",
-    Maintenance = "Em manutenção"
-}
+export class VehicleEntityClass {
+  private constructor(private props: vehicleEntityProps) {}
 
-export class VehicleEntityClass { 
+  public static create(
+    plateValue: string,
+    mark: string,
+    model: string,
+    yearValue: string,
+    type: VehicleTypeEnums,
+    chassisValue: string,
+    status: VehicleStatusEnums,
+    dateAcquisitionValue: Date,
+    updateAt: Date
+  ) {
 
-    private constructor(private props: vehicleEntityProps){};
+    const plate = new PlateValidate(plateValue)
+    const year = new YearValidate(yearValue)
+    const chassis = new ChassisValidate(chassisValue)
+    const dateAcquisition = new DateAcquisitionValidate(dateAcquisitionValue)
+    
+    return new VehicleEntityClass({
+      id_vehicle: crypto.randomUUID().toString(),
+      plate,
+      mark,
+      model,
+      year,
+      type,
+      chassis,
+      status,
+      dateAcquisition,
+      updateAt,
+    })
+  }
 
-    public static create(plate: string, mark: string, model: string, year: string, type: VehicleType, chassis: string, status: VehicleStatus, dateAcquisition: Date, updateAt: Date) {
-        return new VehicleEntityClass({
-            id_vehicle: crypto.randomUUID().toString(),
-            plate,
-            mark,
-            model,
-            year,
-            type,
-            chassis,
-            status,
-            dateAcquisition,
-            updateAt
-        });
-    };
+  public static with(props: vehicleEntityProps) {
+    return new VehicleEntityClass(props)
+  }
 
-    public static with(props: vehicleEntityProps ) {
-        return new VehicleEntityClass(props);
-    };
+  public update(
+    propsToUpdate: Partial<Omit<vehicleEntityProps, 'id_vehicle' | 'updateAt'>>
+  ) {
 
-    public update(propsToUpdate: Partial<Omit<vehicleEntityProps, 'id_vehicle' | 'updateAt'>>) {
-        this.props = {
-            ...this.props,
-            ...propsToUpdate,
-            updateAt: new Date(),
-        };
+    if(propsToUpdate.plate) propsToUpdate.plate = new PlateValidate(propsToUpdate.plate.getPlateValidate())
+
+    if(propsToUpdate.year) propsToUpdate.year = new YearValidate(propsToUpdate.year.getYearValidate())
+
+    if(propsToUpdate.chassis) propsToUpdate.chassis = new ChassisValidate(propsToUpdate.chassis.getChassisValidate())
+
+    if(propsToUpdate.dateAcquisition) propsToUpdate.dateAcquisition = new DateAcquisitionValidate(propsToUpdate.dateAcquisition.getDateAcquisitionValidate())
+
+    this.props = {
+      ...this.props,
+      ...propsToUpdate,
+      updateAt: new Date(),
     }
+  }
 
-    public get id() {
-        return this.props.id_vehicle;
-    };
 
-    public get plate() {
-        return this.props.plate;
-    };
+  public get id() {
+    return this.props.id_vehicle
+  }
 
-    public get mark() {
-        return this.props.mark;
-    };
+  public get plate() {
+    return this.props.plate.getPlateValidate();
+  }
 
-    public get model() {
-        return this.props.model;
-    };
+  public get mark() {
+    return this.props.mark
+  }
 
-    public get year() {
-        return this.props.year;
-    };
+  public get model() {
+    return this.props.model
+  }
 
-    public get type() {
-        return this.props.type;
-    };
+  public get year() {
+    return this.props.year.getYearValidate();
+  }
 
-    public get chassis() {
-        return this.props.chassis;
-    };
+  public get type() {
+    return this.props.type
+  }
 
-    public get status() {
-        return this.props.status;
-    };
+  public get chassis() {
+    return this.props.chassis.getChassisValidate();
+  }
 
-    public get dateAcquisition () {
-        return this.props.dateAcquisition ;
-    };
+  public get status() {
+    return this.props.status
+  }
 
-    public get updateAt() {
-        return this.props.updateAt;
-    }
+  public get dateAcquisition() {
+    return this.props.dateAcquisition.getDateAcquisitionValidate();
+  }
+
+  public get updateAt() {
+    return this.props.updateAt
+  }
 }
