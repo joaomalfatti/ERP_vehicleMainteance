@@ -11,6 +11,7 @@ export type CreateVehicleInputDto = {
         chassis: string;
         status: VehicleStatus;
         dateAcquisition : Date;
+        updateAt: Date;
 }
 
 export type CreateVehicleOutputDto = {
@@ -33,7 +34,8 @@ export class CreateVehicleUseCase implements UseCase<CreateVehicleInputDto, Crea
         type,
         chassis,
         status,
-        dateAcquisition 
+        dateAcquisition,
+        updateAt
     }: CreateVehicleInputDto): Promise<CreateVehicleOutputDto>{
         const aVehicle = VehicleEntityClass.create(
             plate,
@@ -43,7 +45,8 @@ export class CreateVehicleUseCase implements UseCase<CreateVehicleInputDto, Crea
             type,
             chassis,
             status,
-            dateAcquisition 
+            dateAcquisition,
+            updateAt
         );
 
         await this.vehicleGateway.save(aVehicle);

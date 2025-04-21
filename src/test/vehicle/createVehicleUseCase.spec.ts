@@ -6,7 +6,8 @@ import { VehicleStatus, VehicleType, type VehicleEntityClass } from '@domain/veh
 describe('CreateVehicleUseCase', () => {
     const mockVehicleGateway: VehicleGateway = {
         save: vi.fn<VehicleGateway['save']>(), // Mock tipado
-        list: vi.fn()
+        list: vi.fn(),
+        alter: vi.fn()
     };
 
     const input = {
@@ -18,6 +19,7 @@ describe('CreateVehicleUseCase', () => {
         chassis: '9BWZZZ377VT004251',
         status: VehicleStatus.Active,
         dateAcquisition : new Date('2024-01-01'),
+        alterAt: new Date('2024-01-01'),
     };
 
     beforeEach(() => {

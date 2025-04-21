@@ -14,7 +14,8 @@ export type ListVehicleOutputDto = {
             type: VehicleType;
             chassis: string;
             status: VehicleStatus;
-            dateAcquisition : Date;
+            dateAcquisition: Date;
+            updateAt: Date,
     }[];
 };
 
@@ -46,7 +47,8 @@ export class ListVehicleUseCase implements UseCase<ListVehicleInputDto, ListVehi
                     type: p.type,
                     chassis: p.chassis,
                     status: p.status,
-                    dateAcquisition : p.dateAcquisition 
+                    dateAcquisition : p.dateAcquisition,
+                    updateAt: p.updateAt,
                 };
             }),
         };

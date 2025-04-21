@@ -4,6 +4,7 @@
 
   "compilerOptions": {
     "lib": ["es2023"],
+    "types": ["node", "vitest"],
     "module": "nodenext",
     "target": "es2022",
     "baseUrl": "./src",

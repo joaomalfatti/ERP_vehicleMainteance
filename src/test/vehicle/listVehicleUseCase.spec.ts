@@ -13,6 +13,7 @@ describe('ListVehicleUseCase', () => {
       chassis: 'XYZ123456789',
       status: VehicleStatus.Active,
       dateAcquisition: new Date(),
+      updateAt: new Date(),
       id_vehicle: ''
     });
   

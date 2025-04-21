@@ -39,25 +39,37 @@ A estrutura foi pensada para permitir **rastreamento de histórico**, **controle
 
 ```md
 🔧 Cadastro e atualização:
+
 - [ ] Veículos
-  - [ ] Criar veículos
-  - [ ] Listar veículos
+  - [ ✔ ] Criar veículos
+  - [ ✔ ] Listar veículos
   - [ ] Alterar veículos
   - [ ] Excluir veículos
+
 - [ ] Motoristas
 - [ ] Oficinas
 
 🛠️ Manutenções:
+
 - [ ] Registro de manutenções
 - [ ] Histórico completo por veículo
 - [ ] Controle de peças utilizadas
 
 📊 Relatórios e análises:
+
 - [ ] Relatórios de uso da frota
 - [ ] Filtros por:
   - [ ] Status do veículo
   - [ ] Tipo (caminhão, carreta, etc.)
   - [ ] Período de manutenção
+
+🧪Teste unitário
+
+- Veículos
+  - [ ✔ ] Criar veículos
+  - [ ✔ ] Listar veículos
+  - [ ] Alterar veículos
+  - [ ] Excluir veículos
    ```
 --- 
 ## 🎲 EERD Diagrama (Modelo Entidade-Relacionamento Aprimorado)

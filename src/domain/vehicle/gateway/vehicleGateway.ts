@@ -1,7 +1,10 @@
-import type { VehicleEntityClass, vehicleEntityProps } from "../entity/vehicleEntity";
+import type { VehicleEntityClass } from "../entity/vehicleEntity";
 
 
 export interface VehicleGateway {
     save(VehicleEntityClass: VehicleEntityClass): Promise<void>
-    list(): Promise<VehicleEntityClass[]>
+    list(): Promise<VehicleEntityClass[]>[]
+    update(VehicleEntityClass: VehicleEntityClass): Promise<void>;
+    findById(id: string): Promise<VehicleEntityClass | null>; // Aqui
+
 }
