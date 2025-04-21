@@ -7,6 +7,7 @@
     "types": ["node", "vitest"],
     "module": "nodenext",
     "target": "es2022",
+    "noImplicitAny": false,
     "baseUrl": "./src",
     "paths": {
       "@infra/*": ["infra/*"],

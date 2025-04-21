@@ -9,6 +9,7 @@ export type ListVehicleInputDto = void;
 
 export type ListVehicleOutputDto = {
     vehicle: {
+            id_vehicle: string;
             plate: string;
             mark: string;
             model: string;
@@ -40,6 +41,7 @@ export class ListVehicleUseCase implements UseCase<ListVehicleInputDto, ListVehi
     private presentOuput(vehicles: VehicleEntityClass[]): ListVehicleOutputDto {
         return {
           vehicle: vehicles.map(vehicle => ({
+            id_vehicle:vehicle.id,
             plate: vehicle.plate,
             mark: vehicle.mark,
             model: vehicle.model,
