@@ -1,17 +1,23 @@
-import type { VehicleStatus, VehicleType } from "@domain/vehicle/entity/vehicleEntity";
+
+import type { VehicleStatusEnums } from "@domain/vehicle/enums/VehicleStatus";
+import type { VehicleTypeEnums } from "@domain/vehicle/enums/VehicleType";
 import type { VehicleGateway } from "@domain/vehicle/gateway/vehicleGateway";
+import type { ChassisValidate } from "@domain/vehicle/value-objects/chassisValue";
+import type { DateAcquisitionValidate } from "@domain/vehicle/value-objects/dateAcquisitionValue";
+import type { PlateValidate } from "@domain/vehicle/value-objects/plateValue";
+import type { YearValidate } from "@domain/vehicle/value-objects/yearValue";
 import type { UseCase } from "@usecases/UseCase";
 
 export type UpdateVehicleInputDto = {
     id: string;
-    plate?: string
+    plate?: PlateValidate;
     mark?: string;
     model?: string;
-    year?: string
-    type?: VehicleType;
-    chassis?: string;
-    status?: VehicleStatus;
-    dateAcquisition?: Date;
+    year?: YearValidate;
+    type?: VehicleTypeEnums;
+    chassis?: ChassisValidate;
+    status?: VehicleStatusEnums;
+    dateAcquisition?: DateAcquisitionValidate;
 }
 
 export type UpdateVehicleOutputDto = {

@@ -1,4 +1,6 @@
-import { VehicleEntityClass, type VehicleStatus, type VehicleType } from "@domain/vehicle/entity/vehicleEntity";
+import { VehicleEntityClass} from "@domain/vehicle/entity/vehicleEntity";
+import type { VehicleStatusEnums } from "@domain/vehicle/enums/VehicleStatus";
+import type { VehicleTypeEnums } from "@domain/vehicle/enums/VehicleType";
 import type { VehicleGateway } from "@domain/vehicle/gateway/vehicleGateway";
 import type { UseCase } from "@usecases/UseCase";
 
@@ -7,9 +9,9 @@ export type CreateVehicleInputDto = {
         mark: string;
         model: string;
         year: string;
-        type: VehicleType;
+        type: VehicleTypeEnums;
         chassis: string;
-        status: VehicleStatus;
+        status: VehicleStatusEnums;
         dateAcquisition : Date;
         updateAt: Date;
 }

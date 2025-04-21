@@ -1,7 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { UpdateVehicleUseCase } from "@usecases/vehicle/updateVehicleUseCase";
 import type { VehicleGateway } from "@domain/vehicle/gateway/vehicleGateway";
-import { VehicleEntityClass, VehicleType, VehicleStatus } from "@domain/vehicle/entity/vehicleEntity";
+import { VehicleEntityClass} from "@domain/vehicle/entity/vehicleEntity";
+import { VehicleTypeEnums } from "@domain/vehicle/enums/VehicleType";
+import { VehicleStatusEnums } from "@domain/vehicle/enums/VehicleStatus";
+import { PlateValidate } from "@domain/vehicle/value-objects/plateValue";
 
 // Mock da gateway
 let vehicleGatewayMock: VehicleGateway;
@@ -13,9 +16,9 @@ const mockVehicle = VehicleEntityClass.create(
   "Volvo",
   "FH",
   "2022",
-  VehicleType.Truck,
+  VehicleTypeEnums.Truck,
   "9BWZZZ377VT004251",
-  VehicleStatus.Active,
+  VehicleStatusEnums.Active,
   new Date("2022-01-01"),
   new Date()
 );
@@ -39,7 +42,7 @@ describe("UpdateVehicleUseCase", () => {
   it("deve atualizar um veículo com sucesso", async () => {
     const input = {
       id: mockVehicle.id,
-      plate: "XYZ-9876",
+      plate: new PlateValidate("XYZ-9876"),
       mark: "Scania",
     };
 

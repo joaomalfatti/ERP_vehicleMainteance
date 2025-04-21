@@ -1,7 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { DeleteVehicleUseCase } from "@usecases/vehicle/deleteVehicleUseCase"; // ajuste o caminho se necessário
 import type { VehicleGateway } from "@domain/vehicle/gateway/vehicleGateway";
-import { VehicleEntityClass, VehicleStatus, VehicleType } from "@domain/vehicle/entity/vehicleEntity";
+import { VehicleEntityClass} from "@domain/vehicle/entity/vehicleEntity";
+import { VehicleTypeEnums } from "@domain/vehicle/enums/VehicleType";
+import { VehicleStatusEnums } from "@domain/vehicle/enums/VehicleStatus";
 
 describe("DeleteVehicleUseCase", () => {
     // @ts-ignore
@@ -20,13 +22,13 @@ describe("DeleteVehicleUseCase", () => {
 
   it("deve deletar um veículo com sucesso", async () => {
     const fakeVehicle = VehicleEntityClass.create(
-      "ABC1234",
+      "ABC-1234",
       "Ford",
       "Fiesta",
       "2015",
-      VehicleType.Truck, // ou outro tipo correspondente ao seu `VehicleType`
+      VehicleTypeEnums.Truck, // ou outro tipo correspondente ao seu `VehicleType`
       "CHASSIS123",
-      VehicleStatus.Active, // ou outro status correspondente ao seu `VehicleStatus`
+      VehicleStatusEnums.Active, // ou outro status correspondente ao seu `VehicleStatus`
       new Date(),
       new Date()
     );

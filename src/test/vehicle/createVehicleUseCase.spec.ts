@@ -1,7 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { CreateVehicleUseCase } from "@usecases/vehicle/createVehicleUseCase";
 import type { VehicleGateway } from '@domain/vehicle/gateway/vehicleGateway';
-import { VehicleStatus, VehicleType, type VehicleEntityClass } from '@domain/vehicle/entity/vehicleEntity';
+import { VehicleTypeEnums } from '@domain/vehicle/enums/VehicleType';
+import { VehicleStatusEnums } from '@domain/vehicle/enums/VehicleStatus';
 
 describe('CreateVehicleUseCase', () => {
     const mockVehicleGateway: VehicleGateway = {
@@ -17,9 +18,9 @@ describe('CreateVehicleUseCase', () => {
         mark: 'Volkswagen',
         model: 'Gol',
         year: '2020',
-        type: VehicleType.Truck,
+        type: VehicleTypeEnums.Truck,
         chassis: '9BWZZZ377VT004251',
-        status: VehicleStatus.Active,
+        status: VehicleStatusEnums.Active,
         dateAcquisition : new Date('2024-01-01'),
         updateAt: new Date('2024-01-01'),
     };
