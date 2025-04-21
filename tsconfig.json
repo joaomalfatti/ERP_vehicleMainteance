@@ -8,9 +8,9 @@
     "target": "es2022",
     "baseUrl": "./src",
     "paths": {
-      "@infra/*": ["./src/infra/*"],
-      "@usecases/*": ["./src/usecases/*"],
-      "@domain/*": ["./src/domain/*"]
+      "@infra/*": ["infra/*"],
+      "@usecases/*": ["usecases/*"],
+      "@domain/*": ["domain/*"]
     },
 
     "strict": true,
