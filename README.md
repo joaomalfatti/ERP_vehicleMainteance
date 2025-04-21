@@ -40,11 +40,11 @@ A estrutura foi pensada para permitir **rastreamento de histórico**, **controle
 ```md
 🔧 Cadastro e atualização:
 
-- [ ] Veículos
+- [ ✔ ] Veículos
   - [ ✔ ] Criar veículos
   - [ ✔ ] Listar veículos
-  - [ ] Alterar veículos
-  - [ ] Excluir veículos
+  - [ ✔ ] Alterar veículos
+  - [ ✔ ] Excluir veículos
 
 - [ ] Motoristas
 - [ ] Oficinas
@@ -68,8 +68,8 @@ A estrutura foi pensada para permitir **rastreamento de histórico**, **controle
 - Veículos
   - [ ✔ ] Criar veículos
   - [ ✔ ] Listar veículos
-  - [ ] Alterar veículos
-  - [ ] Excluir veículos
+  - [ ✔ ] Alterar veículos
+  - [ ✔ ] Excluir veículos
    ```
 --- 
 ## 🎲 EERD Diagrama (Modelo Entidade-Relacionamento Aprimorado)

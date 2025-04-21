@@ -5,6 +5,7 @@ export interface VehicleGateway {
     save(VehicleEntityClass: VehicleEntityClass): Promise<void>
     list(): Promise<VehicleEntityClass[]>[]
     update(VehicleEntityClass: VehicleEntityClass): Promise<void>;
+    delete(id: string): Promise<void>;
     findById(id: string): Promise<VehicleEntityClass | null>; // Aqui
 
 }
