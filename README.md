@@ -40,7 +40,7 @@
  ```md
  🔧 Cadastro e atualização:
  - [ ] Veículos
-   - [ ] Criar veículos
+   - [ ✔ ] Criar veículos
    - [ ] Listar veículos
    - [ ] Alterar veículos
    - [ ] Excluir veículos
@@ -58,6 +58,10 @@
    - [ ] Status do veículo
    - [ ] Tipo (caminhão, carreta, etc.)
    - [ ] Período de manutenção
+
+ 🧪 Testes unitários
+  - Veículos
+    - [ ✔ ] Criar Veículos
    ```
 
  ## 🎲 EERD Diagrama (Modelo Entidade-Relacionamento Aprimorado)

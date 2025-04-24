@@ -9,7 +9,10 @@
     "build": "tsup src --out-dir build",
     "test": "vitest run",
     "test:one": "vitest run",
-    "test:watch": "vitest "
+    "test:watch": "vitest ",
+    "lint": "biome lint",
+    "format": "biome format",
+    "check": "biome check"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^22.14.1",
+    "biome": "^0.3.3",
     "tsup": "^8.4.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",

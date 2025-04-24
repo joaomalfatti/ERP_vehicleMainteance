@@ -1,12 +1,12 @@
-import { ChassisValidate } from "@domain/entities/value-objects/vehicle/chassisValueObjects";
-import { DateAcquisitionValidade } from "@domain/entities/value-objects/vehicle/dateAcquisitionValueObjects";
-import { YearValidate } from "@domain/entities/value-objects/vehicle/yearValueObjects";
 import type { VehicleEntityClass } from "@domain/entities/vehicle/vehicleEntitys";
 import type { VehicleGateway } from "@domain/gateway/vehicle/vehicleGateway";
 import type { PrismaClient } from '@prisma/client';
 
 export class VehicleRepositoryPrisma implements VehicleGateway {
     private constructor(private prismaClient: PrismaClient) {}
+    list(): Promise<VehicleEntityClass[]> {
+        throw new Error("Method not implemented.");
+    }
 
     public static create(prismaClient: PrismaClient) {
         return new VehicleRepositoryPrisma(prismaClient);
@@ -27,4 +27,6 @@ export class VehicleRepositoryPrisma implements VehicleGateway {
             data,
         });
     }
+
+    //public async list()
 }
