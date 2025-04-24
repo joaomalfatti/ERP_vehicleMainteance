@@ -15,28 +15,12 @@ datasource db {
 }
 
 model Vehicle {
-  id_Vehicle      String             @id @default(uuid())
-  plate           String             @unique
+  idVehicle       String   @id @default(uuid())
+  plate           String
   mark            String
-  model           String
-  year            String
-  type            VehicleTypeEnums
   chassis         String
-  status          VehicleStatusEnums
+  year            String
   dateAcquisition DateTime
-  updateAt        DateTime           @updatedAt
 
-  @@map("tbl_vehicle")
-}
-
-enum VehicleTypeEnums {
-  CART
-  TRUCK
-  TOCO
-}
-
-enum VehicleStatusEnums {
-  ACTIVE
-  INACTIVE
-  MAINTENANCE
+  @@map("tbl_vehicles")
 }

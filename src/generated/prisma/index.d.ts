@@ -20,37 +20,6 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 export type Vehicle = $Result.DefaultSelection<Prisma.$VehiclePayload>
 
 /**
- * Enums
- */
-export namespace $Enums {
-  export const VehicleTypeEnums: {
-  CART: 'CART',
-  TRUCK: 'TRUCK',
-  TOCO: 'TOCO'
-};
-
-export type VehicleTypeEnums = (typeof VehicleTypeEnums)[keyof typeof VehicleTypeEnums]
-
-
-export const VehicleStatusEnums: {
-  ACTIVE: 'ACTIVE',
-  INACTIVE: 'INACTIVE',
-  MAINTENANCE: 'MAINTENANCE'
-};
-
-export type VehicleStatusEnums = (typeof VehicleStatusEnums)[keyof typeof VehicleStatusEnums]
-
-}
-
-export type VehicleTypeEnums = $Enums.VehicleTypeEnums
-
-export const VehicleTypeEnums: typeof $Enums.VehicleTypeEnums
-
-export type VehicleStatusEnums = $Enums.VehicleStatusEnums
-
-export const VehicleStatusEnums: typeof $Enums.VehicleStatusEnums
-
-/**
  * ##  Prisma Client ʲˢ
  *
  * Type-safe database client for TypeScript & Node.js
@@ -911,83 +880,59 @@ export namespace Prisma {
   }
 
   export type VehicleMinAggregateOutputType = {
-    id_Vehicle: string | null
+    idVehicle: string | null
     plate: string | null
     mark: string | null
-    model: string | null
-    year: string | null
-    type: $Enums.VehicleTypeEnums | null
     chassis: string | null
-    status: $Enums.VehicleStatusEnums | null
+    year: string | null
     dateAcquisition: Date | null
-    updateAt: Date | null
   }
 
   export type VehicleMaxAggregateOutputType = {
-    id_Vehicle: string | null
+    idVehicle: string | null
     plate: string | null
     mark: string | null
-    model: string | null
-    year: string | null
-    type: $Enums.VehicleTypeEnums | null
     chassis: string | null
-    status: $Enums.VehicleStatusEnums | null
+    year: string | null
     dateAcquisition: Date | null
-    updateAt: Date | null
   }
 
   export type VehicleCountAggregateOutputType = {
-    id_Vehicle: number
+    idVehicle: number
     plate: number
     mark: number
-    model: number
-    year: number
-    type: number
     chassis: number
-    status: number
+    year: number
     dateAcquisition: number
-    updateAt: number
     _all: number
   }
 
 
   export type VehicleMinAggregateInputType = {
-    id_Vehicle?: true
+    idVehicle?: true
     plate?: true
     mark?: true
-    model?: true
-    year?: true
-    type?: true
     chassis?: true
-    status?: true
+    year?: true
     dateAcquisition?: true
-    updateAt?: true
   }
 
   export type VehicleMaxAggregateInputType = {
-    id_Vehicle?: true
+    idVehicle?: true
     plate?: true
     mark?: true
-    model?: true
-    year?: true
-    type?: true
     chassis?: true
-    status?: true
+    year?: true
     dateAcquisition?: true
-    updateAt?: true
   }
 
   export type VehicleCountAggregateInputType = {
-    id_Vehicle?: true
+    idVehicle?: true
     plate?: true
     mark?: true
-    model?: true
-    year?: true
-    type?: true
     chassis?: true
-    status?: true
+    year?: true
     dateAcquisition?: true
-    updateAt?: true
     _all?: true
   }
 
@@ -1064,16 +1009,12 @@ export namespace Prisma {
   }
 
   export type VehicleGroupByOutputType = {
-    id_Vehicle: string
+    idVehicle: string
     plate: string
     mark: string
-    model: string
-    year: string
-    type: $Enums.VehicleTypeEnums
     chassis: string
-    status: $Enums.VehicleStatusEnums
+    year: string
     dateAcquisition: Date
-    updateAt: Date
     _count: VehicleCountAggregateOutputType | null
     _min: VehicleMinAggregateOutputType | null
     _max: VehicleMaxAggregateOutputType | null
@@ -1094,73 +1035,53 @@ export namespace Prisma {
 
 
   export type VehicleSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id_Vehicle?: boolean
+    idVehicle?: boolean
     plate?: boolean
     mark?: boolean
-    model?: boolean
-    year?: boolean
-    type?: boolean
     chassis?: boolean
-    status?: boolean
+    year?: boolean
     dateAcquisition?: boolean
-    updateAt?: boolean
   }, ExtArgs["result"]["vehicle"]>
 
   export type VehicleSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id_Vehicle?: boolean
+    idVehicle?: boolean
     plate?: boolean
     mark?: boolean
-    model?: boolean
-    year?: boolean
-    type?: boolean
     chassis?: boolean
-    status?: boolean
+    year?: boolean
     dateAcquisition?: boolean
-    updateAt?: boolean
   }, ExtArgs["result"]["vehicle"]>
 
   export type VehicleSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id_Vehicle?: boolean
+    idVehicle?: boolean
     plate?: boolean
     mark?: boolean
-    model?: boolean
-    year?: boolean
-    type?: boolean
     chassis?: boolean
-    status?: boolean
+    year?: boolean
     dateAcquisition?: boolean
-    updateAt?: boolean
   }, ExtArgs["result"]["vehicle"]>
 
   export type VehicleSelectScalar = {
-    id_Vehicle?: boolean
+    idVehicle?: boolean
     plate?: boolean
     mark?: boolean
-    model?: boolean
-    year?: boolean
-    type?: boolean
     chassis?: boolean
-    status?: boolean
+    year?: boolean
     dateAcquisition?: boolean
-    updateAt?: boolean
   }
 
-  export type VehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id_Vehicle" | "plate" | "mark" | "model" | "year" | "type" | "chassis" | "status" | "dateAcquisition" | "updateAt", ExtArgs["result"]["vehicle"]>
+  export type VehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"idVehicle" | "plate" | "mark" | "chassis" | "year" | "dateAcquisition", ExtArgs["result"]["vehicle"]>
 
   export type $VehiclePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Vehicle"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id_Vehicle: string
+      idVehicle: string
       plate: string
       mark: string
-      model: string
-      year: string
-      type: $Enums.VehicleTypeEnums
       chassis: string
-      status: $Enums.VehicleStatusEnums
+      year: string
       dateAcquisition: Date
-      updateAt: Date
     }, ExtArgs["result"]["vehicle"]>
     composites: {}
   }
@@ -1244,8 +1165,8 @@ export namespace Prisma {
      * // Get first 10 Vehicles
      * const vehicles = await prisma.vehicle.findMany({ take: 10 })
      * 
-     * // Only select the `id_Vehicle`
-     * const vehicleWithId_VehicleOnly = await prisma.vehicle.findMany({ select: { id_Vehicle: true } })
+     * // Only select the `idVehicle`
+     * const vehicleWithIdVehicleOnly = await prisma.vehicle.findMany({ select: { idVehicle: true } })
      * 
      */
     findMany<T extends VehicleFindManyArgs>(args?: SelectSubset<T, VehicleFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
@@ -1289,9 +1210,9 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Create many Vehicles and only return the `id_Vehicle`
-     * const vehicleWithId_VehicleOnly = await prisma.vehicle.createManyAndReturn({
-     *   select: { id_Vehicle: true },
+     * // Create many Vehicles and only return the `idVehicle`
+     * const vehicleWithIdVehicleOnly = await prisma.vehicle.createManyAndReturn({
+     *   select: { idVehicle: true },
      *   data: [
      *     // ... provide data here
      *   ]
@@ -1380,9 +1301,9 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Vehicles and only return the `id_Vehicle`
-     * const vehicleWithId_VehicleOnly = await prisma.vehicle.updateManyAndReturn({
-     *   select: { id_Vehicle: true },
+     * // Update zero or more Vehicles and only return the `idVehicle`
+     * const vehicleWithIdVehicleOnly = await prisma.vehicle.updateManyAndReturn({
+     *   select: { idVehicle: true },
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1584,16 +1505,12 @@ export namespace Prisma {
    * Fields of the Vehicle model
    */
   interface VehicleFieldRefs {
-    readonly id_Vehicle: FieldRef<"Vehicle", 'String'>
+    readonly idVehicle: FieldRef<"Vehicle", 'String'>
     readonly plate: FieldRef<"Vehicle", 'String'>
     readonly mark: FieldRef<"Vehicle", 'String'>
-    readonly model: FieldRef<"Vehicle", 'String'>
-    readonly year: FieldRef<"Vehicle", 'String'>
-    readonly type: FieldRef<"Vehicle", 'VehicleTypeEnums'>
     readonly chassis: FieldRef<"Vehicle", 'String'>
-    readonly status: FieldRef<"Vehicle", 'VehicleStatusEnums'>
+    readonly year: FieldRef<"Vehicle", 'String'>
     readonly dateAcquisition: FieldRef<"Vehicle", 'DateTime'>
-    readonly updateAt: FieldRef<"Vehicle", 'DateTime'>
   }
     
 
@@ -1975,16 +1892,12 @@ export namespace Prisma {
 
 
   export const VehicleScalarFieldEnum: {
-    id_Vehicle: 'id_Vehicle',
+    idVehicle: 'idVehicle',
     plate: 'plate',
     mark: 'mark',
-    model: 'model',
-    year: 'year',
-    type: 'type',
     chassis: 'chassis',
-    status: 'status',
-    dateAcquisition: 'dateAcquisition',
-    updateAt: 'updateAt'
+    year: 'year',
+    dateAcquisition: 'dateAcquisition'
   };
 
   export type VehicleScalarFieldEnum = (typeof VehicleScalarFieldEnum)[keyof typeof VehicleScalarFieldEnum]
@@ -2026,34 +1939,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'VehicleTypeEnums'
-   */
-  export type EnumVehicleTypeEnumsFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'VehicleTypeEnums'>
-    
-
-
-  /**
-   * Reference to a field of type 'VehicleTypeEnums[]'
-   */
-  export type ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'VehicleTypeEnums[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'VehicleStatusEnums'
-   */
-  export type EnumVehicleStatusEnumsFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'VehicleStatusEnums'>
-    
-
-
-  /**
-   * Reference to a field of type 'VehicleStatusEnums[]'
-   */
-  export type ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'VehicleStatusEnums[]'>
-    
-
-
-  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -2088,58 +1973,42 @@ export namespace Prisma {
     AND?: VehicleWhereInput | VehicleWhereInput[]
     OR?: VehicleWhereInput[]
     NOT?: VehicleWhereInput | VehicleWhereInput[]
-    id_Vehicle?: StringFilter<"Vehicle"> | string
+    idVehicle?: StringFilter<"Vehicle"> | string
     plate?: StringFilter<"Vehicle"> | string
     mark?: StringFilter<"Vehicle"> | string
-    model?: StringFilter<"Vehicle"> | string
-    year?: StringFilter<"Vehicle"> | string
-    type?: EnumVehicleTypeEnumsFilter<"Vehicle"> | $Enums.VehicleTypeEnums
     chassis?: StringFilter<"Vehicle"> | string
-    status?: EnumVehicleStatusEnumsFilter<"Vehicle"> | $Enums.VehicleStatusEnums
+    year?: StringFilter<"Vehicle"> | string
     dateAcquisition?: DateTimeFilter<"Vehicle"> | Date | string
-    updateAt?: DateTimeFilter<"Vehicle"> | Date | string
   }
 
   export type VehicleOrderByWithRelationInput = {
-    id_Vehicle?: SortOrder
+    idVehicle?: SortOrder
     plate?: SortOrder
     mark?: SortOrder
-    model?: SortOrder
-    year?: SortOrder
-    type?: SortOrder
     chassis?: SortOrder
-    status?: SortOrder
+    year?: SortOrder
     dateAcquisition?: SortOrder
-    updateAt?: SortOrder
   }
 
   export type VehicleWhereUniqueInput = Prisma.AtLeast<{
-    id_Vehicle?: string
-    plate?: string
+    idVehicle?: string
     AND?: VehicleWhereInput | VehicleWhereInput[]
     OR?: VehicleWhereInput[]
     NOT?: VehicleWhereInput | VehicleWhereInput[]
+    plate?: StringFilter<"Vehicle"> | string
     mark?: StringFilter<"Vehicle"> | string
-    model?: StringFilter<"Vehicle"> | string
-    year?: StringFilter<"Vehicle"> | string
-    type?: EnumVehicleTypeEnumsFilter<"Vehicle"> | $Enums.VehicleTypeEnums
     chassis?: StringFilter<"Vehicle"> | string
-    status?: EnumVehicleStatusEnumsFilter<"Vehicle"> | $Enums.VehicleStatusEnums
+    year?: StringFilter<"Vehicle"> | string
     dateAcquisition?: DateTimeFilter<"Vehicle"> | Date | string
-    updateAt?: DateTimeFilter<"Vehicle"> | Date | string
-  }, "id_Vehicle" | "plate">
+  }, "idVehicle">
 
   export type VehicleOrderByWithAggregationInput = {
-    id_Vehicle?: SortOrder
+    idVehicle?: SortOrder
     plate?: SortOrder
     mark?: SortOrder
-    model?: SortOrder
-    year?: SortOrder
-    type?: SortOrder
     chassis?: SortOrder
-    status?: SortOrder
+    year?: SortOrder
     dateAcquisition?: SortOrder
-    updateAt?: SortOrder
     _count?: VehicleCountOrderByAggregateInput
     _max?: VehicleMaxOrderByAggregateInput
     _min?: VehicleMinOrderByAggregateInput
@@ -2149,107 +2018,75 @@ export namespace Prisma {
     AND?: VehicleScalarWhereWithAggregatesInput | VehicleScalarWhereWithAggregatesInput[]
     OR?: VehicleScalarWhereWithAggregatesInput[]
     NOT?: VehicleScalarWhereWithAggregatesInput | VehicleScalarWhereWithAggregatesInput[]
-    id_Vehicle?: StringWithAggregatesFilter<"Vehicle"> | string
+    idVehicle?: StringWithAggregatesFilter<"Vehicle"> | string
     plate?: StringWithAggregatesFilter<"Vehicle"> | string
     mark?: StringWithAggregatesFilter<"Vehicle"> | string
-    model?: StringWithAggregatesFilter<"Vehicle"> | string
-    year?: StringWithAggregatesFilter<"Vehicle"> | string
-    type?: EnumVehicleTypeEnumsWithAggregatesFilter<"Vehicle"> | $Enums.VehicleTypeEnums
     chassis?: StringWithAggregatesFilter<"Vehicle"> | string
-    status?: EnumVehicleStatusEnumsWithAggregatesFilter<"Vehicle"> | $Enums.VehicleStatusEnums
+    year?: StringWithAggregatesFilter<"Vehicle"> | string
     dateAcquisition?: DateTimeWithAggregatesFilter<"Vehicle"> | Date | string
-    updateAt?: DateTimeWithAggregatesFilter<"Vehicle"> | Date | string
   }
 
   export type VehicleCreateInput = {
-    id_Vehicle?: string
+    idVehicle?: string
     plate: string
     mark: string
-    model: string
-    year: string
-    type: $Enums.VehicleTypeEnums
     chassis: string
-    status: $Enums.VehicleStatusEnums
+    year: string
     dateAcquisition: Date | string
-    updateAt?: Date | string
   }
 
   export type VehicleUncheckedCreateInput = {
-    id_Vehicle?: string
+    idVehicle?: string
     plate: string
     mark: string
-    model: string
-    year: string
-    type: $Enums.VehicleTypeEnums
     chassis: string
-    status: $Enums.VehicleStatusEnums
+    year: string
     dateAcquisition: Date | string
-    updateAt?: Date | string
   }
 
   export type VehicleUpdateInput = {
-    id_Vehicle?: StringFieldUpdateOperationsInput | string
+    idVehicle?: StringFieldUpdateOperationsInput | string
     plate?: StringFieldUpdateOperationsInput | string
     mark?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    year?: StringFieldUpdateOperationsInput | string
-    type?: EnumVehicleTypeEnumsFieldUpdateOperationsInput | $Enums.VehicleTypeEnums
     chassis?: StringFieldUpdateOperationsInput | string
-    status?: EnumVehicleStatusEnumsFieldUpdateOperationsInput | $Enums.VehicleStatusEnums
+    year?: StringFieldUpdateOperationsInput | string
     dateAcquisition?: DateTimeFieldUpdateOperationsInput | Date | string
-    updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type VehicleUncheckedUpdateInput = {
-    id_Vehicle?: StringFieldUpdateOperationsInput | string
+    idVehicle?: StringFieldUpdateOperationsInput | string
     plate?: StringFieldUpdateOperationsInput | string
     mark?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    year?: StringFieldUpdateOperationsInput | string
-    type?: EnumVehicleTypeEnumsFieldUpdateOperationsInput | $Enums.VehicleTypeEnums
     chassis?: StringFieldUpdateOperationsInput | string
-    status?: EnumVehicleStatusEnumsFieldUpdateOperationsInput | $Enums.VehicleStatusEnums
+    year?: StringFieldUpdateOperationsInput | string
     dateAcquisition?: DateTimeFieldUpdateOperationsInput | Date | string
-    updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type VehicleCreateManyInput = {
-    id_Vehicle?: string
+    idVehicle?: string
     plate: string
     mark: string
-    model: string
-    year: string
-    type: $Enums.VehicleTypeEnums
     chassis: string
-    status: $Enums.VehicleStatusEnums
+    year: string
     dateAcquisition: Date | string
-    updateAt?: Date | string
   }
 
   export type VehicleUpdateManyMutationInput = {
-    id_Vehicle?: StringFieldUpdateOperationsInput | string
+    idVehicle?: StringFieldUpdateOperationsInput | string
     plate?: StringFieldUpdateOperationsInput | string
     mark?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    year?: StringFieldUpdateOperationsInput | string
-    type?: EnumVehicleTypeEnumsFieldUpdateOperationsInput | $Enums.VehicleTypeEnums
     chassis?: StringFieldUpdateOperationsInput | string
-    status?: EnumVehicleStatusEnumsFieldUpdateOperationsInput | $Enums.VehicleStatusEnums
+    year?: StringFieldUpdateOperationsInput | string
     dateAcquisition?: DateTimeFieldUpdateOperationsInput | Date | string
-    updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type VehicleUncheckedUpdateManyInput = {
-    id_Vehicle?: StringFieldUpdateOperationsInput | string
+    idVehicle?: StringFieldUpdateOperationsInput | string
     plate?: StringFieldUpdateOperationsInput | string
     mark?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    year?: StringFieldUpdateOperationsInput | string
-    type?: EnumVehicleTypeEnumsFieldUpdateOperationsInput | $Enums.VehicleTypeEnums
     chassis?: StringFieldUpdateOperationsInput | string
-    status?: EnumVehicleStatusEnumsFieldUpdateOperationsInput | $Enums.VehicleStatusEnums
+    year?: StringFieldUpdateOperationsInput | string
     dateAcquisition?: DateTimeFieldUpdateOperationsInput | Date | string
-    updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -2267,20 +2104,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type EnumVehicleTypeEnumsFilter<$PrismaModel = never> = {
-    equals?: $Enums.VehicleTypeEnums | EnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    in?: $Enums.VehicleTypeEnums[] | ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    notIn?: $Enums.VehicleTypeEnums[] | ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    not?: NestedEnumVehicleTypeEnumsFilter<$PrismaModel> | $Enums.VehicleTypeEnums
-  }
-
-  export type EnumVehicleStatusEnumsFilter<$PrismaModel = never> = {
-    equals?: $Enums.VehicleStatusEnums | EnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    in?: $Enums.VehicleStatusEnums[] | ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    notIn?: $Enums.VehicleStatusEnums[] | ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    not?: NestedEnumVehicleStatusEnumsFilter<$PrismaModel> | $Enums.VehicleStatusEnums
-  }
-
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2293,42 +2116,30 @@ export namespace Prisma {
   }
 
   export type VehicleCountOrderByAggregateInput = {
-    id_Vehicle?: SortOrder
+    idVehicle?: SortOrder
     plate?: SortOrder
     mark?: SortOrder
-    model?: SortOrder
-    year?: SortOrder
-    type?: SortOrder
     chassis?: SortOrder
-    status?: SortOrder
+    year?: SortOrder
     dateAcquisition?: SortOrder
-    updateAt?: SortOrder
   }
 
   export type VehicleMaxOrderByAggregateInput = {
-    id_Vehicle?: SortOrder
+    idVehicle?: SortOrder
     plate?: SortOrder
     mark?: SortOrder
-    model?: SortOrder
-    year?: SortOrder
-    type?: SortOrder
     chassis?: SortOrder
-    status?: SortOrder
+    year?: SortOrder
     dateAcquisition?: SortOrder
-    updateAt?: SortOrder
   }
 
   export type VehicleMinOrderByAggregateInput = {
-    id_Vehicle?: SortOrder
+    idVehicle?: SortOrder
     plate?: SortOrder
     mark?: SortOrder
-    model?: SortOrder
-    year?: SortOrder
-    type?: SortOrder
     chassis?: SortOrder
-    status?: SortOrder
+    year?: SortOrder
     dateAcquisition?: SortOrder
-    updateAt?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -2349,26 +2160,6 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type EnumVehicleTypeEnumsWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.VehicleTypeEnums | EnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    in?: $Enums.VehicleTypeEnums[] | ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    notIn?: $Enums.VehicleTypeEnums[] | ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    not?: NestedEnumVehicleTypeEnumsWithAggregatesFilter<$PrismaModel> | $Enums.VehicleTypeEnums
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumVehicleTypeEnumsFilter<$PrismaModel>
-    _max?: NestedEnumVehicleTypeEnumsFilter<$PrismaModel>
-  }
-
-  export type EnumVehicleStatusEnumsWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.VehicleStatusEnums | EnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    in?: $Enums.VehicleStatusEnums[] | ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    notIn?: $Enums.VehicleStatusEnums[] | ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    not?: NestedEnumVehicleStatusEnumsWithAggregatesFilter<$PrismaModel> | $Enums.VehicleStatusEnums
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumVehicleStatusEnumsFilter<$PrismaModel>
-    _max?: NestedEnumVehicleStatusEnumsFilter<$PrismaModel>
-  }
-
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2387,14 +2178,6 @@ export namespace Prisma {
     set?: string
   }
 
-  export type EnumVehicleTypeEnumsFieldUpdateOperationsInput = {
-    set?: $Enums.VehicleTypeEnums
-  }
-
-  export type EnumVehicleStatusEnumsFieldUpdateOperationsInput = {
-    set?: $Enums.VehicleStatusEnums
-  }
-
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
@@ -2411,20 +2194,6 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type NestedEnumVehicleTypeEnumsFilter<$PrismaModel = never> = {
-    equals?: $Enums.VehicleTypeEnums | EnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    in?: $Enums.VehicleTypeEnums[] | ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    notIn?: $Enums.VehicleTypeEnums[] | ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    not?: NestedEnumVehicleTypeEnumsFilter<$PrismaModel> | $Enums.VehicleTypeEnums
-  }
-
-  export type NestedEnumVehicleStatusEnumsFilter<$PrismaModel = never> = {
-    equals?: $Enums.VehicleStatusEnums | EnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    in?: $Enums.VehicleStatusEnums[] | ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    notIn?: $Enums.VehicleStatusEnums[] | ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    not?: NestedEnumVehicleStatusEnumsFilter<$PrismaModel> | $Enums.VehicleStatusEnums
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -2464,26 +2233,6 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
-  }
-
-  export type NestedEnumVehicleTypeEnumsWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.VehicleTypeEnums | EnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    in?: $Enums.VehicleTypeEnums[] | ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    notIn?: $Enums.VehicleTypeEnums[] | ListEnumVehicleTypeEnumsFieldRefInput<$PrismaModel>
-    not?: NestedEnumVehicleTypeEnumsWithAggregatesFilter<$PrismaModel> | $Enums.VehicleTypeEnums
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumVehicleTypeEnumsFilter<$PrismaModel>
-    _max?: NestedEnumVehicleTypeEnumsFilter<$PrismaModel>
-  }
-
-  export type NestedEnumVehicleStatusEnumsWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.VehicleStatusEnums | EnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    in?: $Enums.VehicleStatusEnums[] | ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    notIn?: $Enums.VehicleStatusEnums[] | ListEnumVehicleStatusEnumsFieldRefInput<$PrismaModel>
-    not?: NestedEnumVehicleStatusEnumsWithAggregatesFilter<$PrismaModel> | $Enums.VehicleStatusEnums
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumVehicleStatusEnumsFilter<$PrismaModel>
-    _max?: NestedEnumVehicleStatusEnumsFilter<$PrismaModel>
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {

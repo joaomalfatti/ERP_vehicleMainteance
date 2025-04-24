@@ -118,16 +118,12 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 });
 
 exports.Prisma.VehicleScalarFieldEnum = {
-  id_Vehicle: 'id_Vehicle',
+  idVehicle: 'idVehicle',
   plate: 'plate',
   mark: 'mark',
-  model: 'model',
-  year: 'year',
-  type: 'type',
   chassis: 'chassis',
-  status: 'status',
-  dateAcquisition: 'dateAcquisition',
-  updateAt: 'updateAt'
+  year: 'year',
+  dateAcquisition: 'dateAcquisition'
 };
 
 exports.Prisma.SortOrder = {
@@ -139,17 +135,7 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
-exports.VehicleTypeEnums = exports.$Enums.VehicleTypeEnums = {
-  CART: 'CART',
-  TRUCK: 'TRUCK',
-  TOCO: 'TOCO'
-};
 
-exports.VehicleStatusEnums = exports.$Enums.VehicleStatusEnums = {
-  ACTIVE: 'ACTIVE',
-  INACTIVE: 'INACTIVE',
-  MAINTENANCE: 'MAINTENANCE'
-};
 
 exports.Prisma.ModelName = {
   Vehicle: 'Vehicle'

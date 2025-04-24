@@ -1,2 +1,14 @@
 ###
-GET http://localhost:8000/products
+POST http://localhost:8000/vehicles
+Content-Type: application/json
+
+{
+  "plate": "ABC-1234",
+  "mark": "Volkswagen",
+  "year": "2020",
+  "chassis": "9BWZZZ377VT004251",
+  "dateAcquisition": "2024-01-01T00:00:00.000Z"
+}
+
+###
+GET http://localhost:8000/vehicles

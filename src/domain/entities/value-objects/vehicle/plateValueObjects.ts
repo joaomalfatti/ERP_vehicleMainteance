@@ -1,10 +1,9 @@
 export class PlateValidate {
-    private readonly value: string;
+    private readonly getPlateValidadevalue: string;
 
     constructor(value: string) {
-
         if(!value || value.trim() === "") {
-            throw new Error('A placa do veículo é obrigatória.')
+            throw new Error("A Placa do veículo é obrigatória.")
         }
 
         const plateRefex = /^[A-Z]{3}-\d{4}$/;
@@ -12,10 +11,10 @@ export class PlateValidate {
             throw new Error("Formato da placa inválido.");
         }
 
-        this.value = value;
+        this.getPlateValidadevalue = value;
     }
 
-    public getPlateValidate(): string {
-        return this.value;
+    public getPlateValidade(): string {
+        return this.getPlateValidadevalue;
     }
 }
