@@ -41,7 +41,7 @@
  🔧 Cadastro e atualização:
  - [ ] Veículos
    - [ ✔ ] Criar veículos
-   - [ ] Listar veículos
+   - [ ✔ ] Listar veículos
    - [ ] Alterar veículos
    - [ ] Excluir veículos
  - [ ] Motoristas
@@ -62,6 +62,7 @@
  🧪 Testes unitários
   - Veículos
     - [ ✔ ] Criar Veículos
+    - [ ✔ ] Listar Veículos
    ```
 
  ## 🎲 EERD Diagrama (Modelo Entidade-Relacionamento Aprimorado)

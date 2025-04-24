@@ -5,7 +5,6 @@ import { YearValidate } from "@domain/entities/value-objects/vehicle/yearValueOb
 import { VehicleEntityClass } from "@domain/entities/vehicle/vehicleEntitys";
 import type { VehicleGateway } from "@domain/gateway/vehicle/vehicleGateway";
 import type { PrismaClient } from '@prisma/client';
-import { isDataView } from "node:util/types";
 
 export class VehicleRepositoryPrisma implements VehicleGateway {
     private constructor(private prismaClient: PrismaClient) {}

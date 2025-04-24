@@ -6,13 +6,14 @@ import { CreateVehicleUseCase } from "@domain/use-cases/vehicle/createVehicleUse
 
 describe('create an vehicle', () => {
     const mockVehicleGateway: VehicleGateway = {
-        save: vi.fn()
+        save: vi.fn(),
+        list: vi.fn()
     }
 
     const input = {
         plate: 'ABC-1234',
         mark: 'Volkswagen',
-        chassis: '9BW',
+        chassis: '9BWajsdjuasjudsaj595995',
         year: '2020',
         dateAcquisition: new Date('2024-01-01'),
     }
